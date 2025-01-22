@@ -541,6 +541,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
 
   // selects the right color for the field
   Color _getColorFromIndex(int index) {
+    if(isInErrorMode) return widget.pinTheme.errorBorderColor;
     if(_selectedIndex == index) return widget.pinTheme.selectedColor;
     if (!widget.enabled) {
       return _pinTheme.disabledColor;
